@@ -1,0 +1,7 @@
+{
+    "/comics/*": {
+        "target": "https://gateway.marvel.com/v1/public",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
