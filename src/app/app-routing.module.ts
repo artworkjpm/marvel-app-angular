@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CharactersComponent } from './components/characters/characters.component';
+import { TopHeaderComponent } from './components/top-header/top-header.component';
 
-const routes: Routes = [];
+const routes: Routes = [{ path: '', component: CharactersComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
