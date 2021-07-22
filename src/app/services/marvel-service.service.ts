@@ -12,8 +12,8 @@ const Private = '19979debb41903c961cf2ed6340adecb7b710f8e';
 export class MarvelServiceService {
   constructor(private http: HttpClient) {}
 
-  public get(url: string): Observable<any> {
-    return this.http.get(`/comics?apikey=${KEY}`).pipe(map((res) => res));
+  public getComics(): Observable<any> {
+    return this.http.get(`/comics?apikey=${KEY}`);
   }
 }
 
