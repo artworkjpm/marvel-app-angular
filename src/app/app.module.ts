@@ -7,10 +7,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopHeaderComponent } from './components/top-header/top-header.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { MarvelServiceService } from './services/marvel-service.service';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from '../app/Store/Reducers';
 
 @NgModule({
   declarations: [AppComponent, TopHeaderComponent, CharactersComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+    }),
+  ],
   providers: [HttpClient, MarvelServiceService],
   bootstrap: [AppComponent],
 })

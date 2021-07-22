@@ -13,7 +13,7 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit() {
     this.api.get('users?page=1').subscribe((res) => {
-      this.users = res;
+      this.users = res.data.results;
       console.log('data response', this.users);
     });
   }
