@@ -16,9 +16,10 @@ export class ComicEffects {
       ofType(getComics),
       mergeMap(() =>
         this.dataService.getComics().pipe(
-          map((comics: any) =>
-            getComicsSuccess({ comics: comics.data.results })
-          ),
+          map((comics: any) => {
+            console.log(comics.data);
+            return getComicsSuccess({ comics: comics.data.results });
+          }),
           catchError((error) => of(getComicsError({ error })))
         )
       )

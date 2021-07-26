@@ -16,11 +16,11 @@ export class ComicsComponent implements OnInit {
     this.getAllComics();
   }
 
+  loadMoreComics() {
+    console.log('test');
+  }
+
   getAllComics() {
     this.store.dispatch(getComics());
-    /*  this.dataService.getComics().subscribe((res) => {
-      this.comics = res.data.results;
-      console.log('data response', this.comics);
-    }); */
   }
 }
