@@ -8,7 +8,7 @@ import { getComics } from 'src/app/Store/Actions/comics.action';
   styleUrls: ['./comics.component.scss'],
 })
 export class ComicsComponent implements OnInit {
-  comics$ = this.store.select((state) => state.comics);
+  comics$ = this.store.select((state) => state.comicReducer.comics);
 
   constructor(private store: Store<any>) {}
 

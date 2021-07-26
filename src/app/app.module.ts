@@ -26,7 +26,7 @@ import { ComicEffects } from './Store/Effects/comics.effects';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ comics: comicReducer }),
+    StoreModule.forRoot({ comicReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

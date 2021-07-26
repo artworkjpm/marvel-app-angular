@@ -1,5 +1,5 @@
-<ul>
+<ol>
   <li *ngFor="let comic of comics$ | async; index as i">
-    {{ i + 1 }}
+    {{ comic.title }}
   </li>
-</ul>
+</ol>
