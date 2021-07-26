@@ -14,9 +14,9 @@ export class ComicEffects {
   loadComics$ = createEffect(() =>
     this.action$.pipe(
       ofType(getComics),
-      mergeMap(() =>
-        this.dataService.getComics().pipe(
-          map((comics: any) => {
+      mergeMap((action) =>
+        this.dataService.getComics(action.skip).pipe(
+          map((comics) => {
             console.log(comics.data);
             return getComicsSuccess({ comics: comics.data.results });
           }),

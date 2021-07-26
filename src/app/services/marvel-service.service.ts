@@ -12,10 +12,12 @@ const Private = '19979debb41903c961cf2ed6340adecb7b710f8e';
 export class MarvelServiceService {
   constructor(private http: HttpClient) {}
 
-  public getComics(): Observable<any> {
-    return this.http.get(`/comics?apikey=${KEY}`);
+  public getComics(skip: number): Observable<any> {
+    return this.http.get(`/comics?apikey=${KEY}&offset=${skip}`);
   }
 }
+
+//&limit=100&offset=100
 
 //data.results[13].images[0].path
 //http://i.annihil.us/u/prod/marvel/i/mg/c/60/4bc69f11baf75.jpg

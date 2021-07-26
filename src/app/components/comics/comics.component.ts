@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { getComics } from 'src/app/Store/Actions/comics.action';
+import { createSelector, select, Store } from '@ngrx/store';
+import { getComics, increment } from 'src/app/Store/Actions/comics.action';
 
 @Component({
   selector: 'app-comics',
@@ -9,6 +9,7 @@ import { getComics } from 'src/app/Store/Actions/comics.action';
 })
 export class ComicsComponent implements OnInit {
   comics$ = this.store.select((state) => state.comicReducer.comics);
+  skip = 0;
 
   constructor(private store: Store<any>) {}
 
@@ -17,10 +18,12 @@ export class ComicsComponent implements OnInit {
   }
 
   loadMoreComics() {
-    console.log('test');
+    this.skip = this.skip + 20;
+    this.store.dispatch(increment({ skip: this.skip }));
+    this.getAllComics();
   }
 
   getAllComics() {
-    this.store.dispatch(getComics());
+    this.store.dispatch(getComics({ skip: this.skip }));
   }
 }
