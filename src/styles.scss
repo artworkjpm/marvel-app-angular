@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: marvel;
+  src: url(assets/fonts/Marvel.ttf);
+}
+
+@font-face {
+  font-family: marvelReg;
+  src: url(assets/fonts/Marvel-Regular.ttf);
+}
+
+@font-face {
+  font-family: marvelBold;
+  src: url(assets/fonts/Marvel-Bold.ttf);
+}
+
+ol,
+li {
+  font-family: marvelBold;
+  font-size: 2rem;
+}
+
+button {
+  font-family: marvelBold;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding: 10px;
+}

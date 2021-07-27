@@ -5,13 +5,13 @@ import {
   increment,
 } from '../Actions/comics.action';
 
-export interface Coms {
+export interface Comics {
   comics: any[];
   skip: number;
   error: any;
 }
 
-const initialState: Coms = {
+const initialState: Comics = {
   comics: [],
   skip: 0,
   error: '',

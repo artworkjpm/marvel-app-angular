@@ -1,9 +1,16 @@
 <ol>
   <li *ngFor="let comic of comics$ | async; index as i">
-    {{ comic.title }}
+    <div>
+      <div>
+        {{ comic.title }}
+      </div>
+      <div>
+        <img [src]="comic.thumbnail.path + '.jpg'" alt="" width="300" />
+      </div>
+    </div>
   </li>
 </ol>
 
 <div>
-  <button (click)="loadMoreComics()">test</button>
+  <button (click)="loadMoreComics()">Load more</button>
 </div>
