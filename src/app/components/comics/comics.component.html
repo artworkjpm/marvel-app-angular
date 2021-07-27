@@ -1,14 +1,21 @@
 <ol>
-  <li *ngFor="let comic of comics$ | async; index as i">
-    <div>
+  <ng-container *ngFor="let comic of comics$ | async; index as i">
+    <li
+      *ngIf="
+        comic.thumbnail.path + '.jpg' !==
+        'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
+      "
+    >
       <div>
-        {{ comic.title }}
+        <div>
+          {{ comic.title }}
+        </div>
+        <div>
+          <img [src]="comic.thumbnail.path + '.jpg'" alt="" width="300" />
+        </div>
       </div>
-      <div>
-        <img [src]="comic.thumbnail.path + '.jpg'" alt="" width="300" />
-      </div>
-    </div>
-  </li>
+    </li>
+  </ng-container>
 </ol>
 
 <div>
